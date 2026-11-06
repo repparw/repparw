@@ -6,6 +6,8 @@ I build and operate Linux-based infrastructure, automate repetitive work, and in
 
 Based in Argentina. **Open to remote roles** in Linux infrastructure, system administration, DevOps, and technical support.
 
+**[Technical evidence for support and infrastructure roles](projects/technical-evidence.md)**: three short, source-backed cases covering a Linux service failure, monitoring and recovery, and a stateful API integration.
+
 ## Selected work
 
 ### [NixOS infrastructure](https://github.com/repparw/nix)
