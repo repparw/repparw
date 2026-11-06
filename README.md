@@ -28,7 +28,7 @@ Python/Pyvider provider for an Archer AX23 v2.0, verified on hardware. It manage
 - Includes optional RSA authentication-key pinning and a read-only inventory tool.
 - Uses unit and Terraform lifecycle tests, with frozen builds for Linux, macOS, and Windows.
 
-**Status:** [v0.1.0 is available on GitHub](https://github.com/repparw/terraform-provider-tplink/releases/tag/v0.1.0). Registry availability has not been confirmed.
+**Status:** [v0.1.0 is available on GitHub](https://github.com/repparw/terraform-provider-tplink/releases/tag/v0.1.0). v0.1.0 is listed in the [Terraform Registry](https://registry.terraform.io/providers/repparw/tplink/latest) and [OpenTofu Registry](https://search.opentofu.org/provider/repparw/tplink/latest).
 
 [Implementation and tests](https://github.com/repparw/terraform-provider-tplink/tree/main/python) · [Technical case study](projects/tplink-provider.md)
 
