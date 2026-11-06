@@ -1,7 +1,7 @@
 # Case study: Terraform/OpenTofu provider for a TP-Link router
 
 **Project:** [repparw/terraform-provider-tplink](https://github.com/repparw/terraform-provider-tplink)  
-**Status:** Hardware-verified implementation. [v0.1.0 is published on GitHub](https://github.com/repparw/terraform-provider-tplink/releases/tag/v0.1.0). Registry availability has not been confirmed.
+**Status:** Hardware-verified implementation. [v0.1.0 is published on GitHub](https://github.com/repparw/terraform-provider-tplink/releases/tag/v0.1.0). v0.1.0 is listed in the [Terraform Registry](https://registry.terraform.io/providers/repparw/tplink/latest) and [OpenTofu Registry](https://search.opentofu.org/provider/repparw/tplink/latest).
 
 ## Problem and scope
 
