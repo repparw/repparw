@@ -6,7 +6,7 @@ I build and run Linux infrastructure, automate repetitive work, and troubleshoot
 
 **Looking for remote work** in Linux infrastructure, DevOps and automation, IT operations, implementation, or technical support. Based in Argentina.
 
-[Résumé](https://cv.repparw.com/cv.pdf) · [LinkedIn](https://www.linkedin.com/in/ubritos/)
+[Résumé](https://cv.repparw.com/) · [LinkedIn](https://www.linkedin.com/in/ubritos/)
 
 **[Technical examples](projects/technical-evidence.md):** three short cases, each linked to its source: a Linux service failure, monitoring and recovery, and a stateful API integration.
 
