@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0d1726">
-  <meta name="description" content="Ulises Britos. Linux systems, infrastructure automation, and troubleshooting. Currently looking for remote work. Download my CV in English or Spanish.">
+  <meta name="description" content="Ulises Britos. Linux systems, infrastructure automation, and troubleshooting. Read my résumé in English or Spanish.">
   <meta property="og:title" content="Ulises Britos | Linux Systems & Automation">
-  <meta property="og:description" content="Currently looking for remote work. CV available in English and Spanish.">
+  <meta property="og:description" content="Linux infrastructure and automation projects, with a résumé in English and Spanish.">
   <meta property="og:type" content="website">
-  <title>Ulises Britos | CV</title>
+  <title>Ulises Britos | Résumé</title>
   <style>
     :root {
       color-scheme: dark;
@@ -148,7 +148,20 @@
       font: 700 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
       letter-spacing: .08em;
     }
-    .preview-toolbar a { color: var(--accent); font-size: 14px; font-weight: 650; text-underline-offset: 4px; }
+    .preview-toolbar a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #0c2926;
+      font-size: 14px;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .preview-toolbar a:hover { background: #baf6e8; }
     .resume-iframe {
       display: block;
       width: 100%;
@@ -184,6 +197,7 @@
       h1 { font-size: clamp(3.2rem, 14vw, 5rem); }
       .resume-iframe { height: 64vh; min-height: 420px; }
       .preview-toolbar { padding: 12px; }
+      .preview-toolbar a { width: 100%; }
       .language-switch button { padding-inline: 14px; }
       .section { padding-bottom: 55px; }
     }
@@ -210,7 +224,7 @@
         <div>
           <p class="eyebrow">Linux systems / Infrastructure / Automation</p>
           <h1 id="name">Ulises <span class="family">Britos.</span></h1>
-          <p class="lead">I build and maintain Linux infrastructure, automate repetitive work, and troubleshoot systems and services. Based in Argentina and interested in remote technical roles.</p>
+          <p class="lead">I build and maintain Linux infrastructure, automate repetitive work, and troubleshoot systems and services. Based in Argentina.</p>
           <p class="availability">Currently looking for remote work</p>
           <div class="actions">
             <a class="button primary" href="#resume">View résumé <span aria-hidden="true">↓</span></a>
@@ -222,7 +236,6 @@
       <section class="resume-section" id="resume" aria-labelledby="resume-title">
         <div class="resume-heading">
           <div>
-            <p class="eyebrow">The document</p>
             <h2 id="resume-title">Résumé</h2>
             <p>Read it here or open the PDF in a separate tab.</p>
           </div>
@@ -233,13 +246,14 @@
         </div>
         <div class="preview">
           <div class="preview-toolbar">
-            <span class="preview-label" id="pdf-label">CV / ENGLISH / PDF</span>
-            <a id="pdf-open" href="./cv.pdf" target="_blank" rel="noopener" type="application/pdf">Open full PDF ↗</a>
+            <span class="preview-label" id="pdf-label">RÉSUMÉ / ENGLISH / PDF</span>
+            <a id="pdf-open" href="./cv.pdf" target="_blank" rel="noopener" type="application/pdf">Open PDF ↗</a>
           </div>
-          <iframe id="pdf-frame" class="resume-iframe" src="./cv.pdf#view=FitH"
+          <iframe id="pdf-frame" class="resume-iframe"
             title="English résumé (PDF)" loading="lazy">Your browser may not display embedded PDFs.</iframe>
         </div>
-        <p class="resume-note">If the preview does not load on your device, use "Open full PDF" above.</p>
+        <p class="resume-note">If your browser cannot display the embedded PDF, use "Open PDF" above.</p>
+        <noscript><p class="resume-note"><a href="./cv.pdf">English résumé</a> · <a href="./cv_es.pdf" lang="es">Currículum en español</a></p></noscript>
       </section>
 
       <section class="section" id="work" aria-labelledby="work-title">
@@ -270,15 +284,15 @@
       </section>
     </main>
     <footer>
-      <span>Ulises Britos · Argentina · Available for remote work</span>
+      <span>Ulises Britos · Argentina</span>
       <span><a href="https://github.com/repparw">GitHub</a> · <a href="https://www.linkedin.com/in/ubritos/">LinkedIn</a></span>
     </footer>
   </div>
   <script>
     (() => {
       const languages = {
-        en: { path: "./cv.pdf", label: "CV / ENGLISH / PDF", title: "English résumé (PDF)", link: "Open full PDF ↗" },
-        es: { path: "./cv_es.pdf", label: "CV / ESPAÑOL / PDF", title: "Currículum en español (PDF)", link: "Abrir PDF completo ↗" }
+        en: { path: "./cv.pdf", label: "RÉSUMÉ / ENGLISH / PDF", title: "English résumé (PDF)", link: "Open PDF ↗" },
+        es: { path: "./cv_es.pdf", label: "CURRÍCULUM / ESPAÑOL / PDF", title: "Currículum en español (PDF)", link: "Abrir PDF ↗" }
       };
       const frame = document.getElementById("pdf-frame");
       const fullPDF = document.getElementById("pdf-open");
@@ -287,7 +301,10 @@
       function setLanguage(lang, saveSelection) {
         const selected = lang in languages ? lang : "en";
         const choice = languages[selected];
-        frame.src = choice.path + "#view=FitH";
+        if (frame.dataset.lang !== selected) {
+          frame.src = choice.path + "#view=FitH";
+          frame.dataset.lang = selected;
+        }
         frame.title = choice.title;
         fullPDF.href = choice.path;
         fullPDF.textContent = choice.link;
