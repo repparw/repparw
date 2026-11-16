@@ -67,11 +67,8 @@
     .nav a { color: var(--muted); font-size: 14px; text-decoration: none; transition: color .2s ease; }
     .nav a:hover { color: var(--text); }
     .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr);
-      gap: 44px;
-      align-items: center;
-      padding-block: clamp(72px, 10vw, 140px) 86px;
+      max-width: 850px;
+      padding-block: clamp(60px, 8vw, 104px) 64px;
     }
     .eyebrow { color: var(--accent); font: 700 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; text-transform: uppercase; letter-spacing: .2em; }
     h1 { max-width: 850px; margin: 22px 0 22px; font-size: clamp(3.5rem, 7.5vw, 7rem); line-height: .98; letter-spacing: -.075em; font-weight: 650; }
@@ -92,26 +89,74 @@
     .button:hover { transform: translateY(-2px); background: rgba(255,255,255,.06); border-color: rgba(204,223,245,.35); }
     .button.primary { background: var(--accent); color: #0c2926; border-color: var(--accent); }
     .button.primary:hover { background: #baf6e8; }
-    .document {
-      position: relative;
-      display: grid;
-      gap: 20px;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: linear-gradient(145deg, rgba(32, 55, 75, .9), rgba(17, 31, 48, .85));
-      box-shadow: 0 30px 80px rgba(0, 0, 0, .17);
+    .resume-section {
+      padding: 28px 0 86px;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 24px;
     }
-    .document .section-label { display: flex; justify-content: space-between; gap: 10px; color: #b5c4d6; font: 700 11px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .15em; text-transform: uppercase; }
-    .paper { padding: 32px 27px; min-height: 300px; background: #f4f5f4; color: #182739; border-radius: 5px; transform: rotate(2deg); box-shadow: 12px 14px 0 rgba(147,234,214,.10); }
-    .paper-name { font-family: Georgia, "Times New Roman", serif; font-size: 31px; line-height: 1.1; letter-spacing: -.045em; }
-    .paper-label { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: #52716d; margin-top: 9px; }
-    .paper-rule { height: 2px; background: #70b4a9; margin-block: 22px; }
-    .paper-line { height: 7px; background: #cbd3d5; border-radius: 5px; margin-bottom: 10px; }
-    .paper-line:nth-of-type(3n) { width: 73%; }
-    .paper-line:nth-of-type(4n) { width: 88%; }
-    .paper-gap { margin-top: 26px; }
-    .document-note { color: var(--muted); font-size: 13px; margin: 0; }
+    .resume-heading {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+    .resume-heading h2 { margin-bottom: 3px; }
+    .resume-heading p { margin: 0; color: var(--muted); font-size: 14px; }
+    .language-switch {
+      display: inline-flex;
+      gap: 4px;
+      padding: 5px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(20, 34, 55, .87);
+    }
+    .language-switch button {
+      appearance: none;
+      padding: 10px 20px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 650;
+    }
+    .language-switch button[aria-pressed="true"] { background: var(--accent); color: #0c2926; }
+    .language-switch button:hover:not([aria-pressed="true"]) { background: rgba(255,255,255,.08); color: var(--text); }
+    .preview {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface);
+      box-shadow: 0 30px 80px rgba(0,0,0,.16);
+    }
+    .preview-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      min-height: 63px;
+      padding: 12px 19px;
+      border-bottom: 1px solid var(--line);
+    }
+    .preview-label {
+      color: var(--muted);
+      font: 700 12px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+      letter-spacing: .08em;
+    }
+    .preview-toolbar a { color: var(--accent); font-size: 14px; font-weight: 650; text-underline-offset: 4px; }
+    .resume-iframe {
+      display: block;
+      width: 100%;
+      height: clamp(540px, 79vw, 1030px);
+      border: 0;
+      background: #e9edf0;
+    }
+    .resume-note { margin: 14px 2px 0; color: var(--muted); font-size: 13px; }
     .section { padding: 36px 0 85px; border-top: 1px solid var(--line); }
     .section-header { display: flex; justify-content: space-between; gap: 30px; align-items: baseline; margin-bottom: 26px; }
     h2 { margin: 0; font-size: clamp(1.5rem, 2.8vw, 2.1rem); font-weight: 650; letter-spacing: -.04em; }
@@ -126,8 +171,7 @@
     footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; border-top: 1px solid var(--line); padding: 30px 0 46px; font-size: 13px; color: var(--muted); }
     footer a { text-decoration: none; color: var(--text); }
     @media (max-width: 820px) {
-      .hero { grid-template-columns: 1fr; padding-top: 64px; gap: 55px; }
-      .document { max-width: 460px; }
+      .hero { padding-top: 60px; }
       .cards { grid-template-columns: 1fr; }
       .section-header { display: block; }
       .section-header p { margin-top: 8px; }
@@ -138,8 +182,9 @@
       .nav { gap: 15px; }
       .nav a { font-size: 13px; }
       h1 { font-size: clamp(3.2rem, 14vw, 5rem); }
-      .document { padding: 20px; }
-      .paper { min-height: 235px; }
+      .resume-iframe { height: 64vh; min-height: 420px; }
+      .preview-toolbar { padding: 12px; }
+      .language-switch button { padding-inline: 14px; }
       .section { padding-bottom: 55px; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -153,6 +198,7 @@
     <header class="topbar">
       <a class="brand" href="./" aria-label="Ulises Britos, home">UB<span>.</span></a>
       <nav class="nav" aria-label="Main navigation">
+        <a href="#resume">Résumé</a>
         <a href="#work">Selected work</a>
         <a href="https://github.com/repparw">GitHub</a>
         <a href="https://www.linkedin.com/in/ubritos/">LinkedIn</a>
@@ -167,25 +213,33 @@
           <p class="lead">I build and maintain Linux infrastructure, automate repetitive work, and troubleshoot systems and services. Based in Argentina and interested in remote technical roles.</p>
           <p class="availability">Currently looking for remote work</p>
           <div class="actions">
-            <a class="button primary" href="./cv.pdf" type="application/pdf">Download CV (English) <span aria-hidden="true">↗</span></a>
-            <a class="button" href="./cv_es.pdf" lang="es" type="application/pdf">CV en español <span aria-hidden="true">↗</span></a>
+            <a class="button primary" href="#resume">View résumé <span aria-hidden="true">↓</span></a>
             <a class="button" href="https://www.linkedin.com/in/ubritos/">Get in touch <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <aside class="document" aria-label="CV illustration">
-          <div class="section-label"><span>Résumé / 2026</span><span>EN · ES</span></div>
-          <div class="paper" aria-hidden="true">
-            <div class="paper-name">Ulises Britos</div>
-            <div class="paper-label">Linux Infrastructure &amp; Automation</div>
-            <div class="paper-rule"></div>
-            <div class="paper-line"></div><div class="paper-line"></div><div class="paper-line"></div>
-            <div class="paper-gap"></div>
-            <div class="paper-line"></div><div class="paper-line"></div><div class="paper-line"></div>
-            <div class="paper-gap"></div>
-            <div class="paper-line"></div><div class="paper-line"></div>
+      </section>
+
+      <section class="resume-section" id="resume" aria-labelledby="resume-title">
+        <div class="resume-heading">
+          <div>
+            <p class="eyebrow">The document</p>
+            <h2 id="resume-title">Résumé</h2>
+            <p>Read it here or open the PDF in a separate tab.</p>
           </div>
-          <p class="document-note">One-page PDFs in English and Spanish. No sign-in required.</p>
-        </aside>
+          <div class="language-switch" role="group" aria-label="Résumé language">
+            <button id="lang-en" type="button" aria-pressed="true" data-lang="en">English</button>
+            <button id="lang-es" type="button" aria-pressed="false" data-lang="es" lang="es">Español</button>
+          </div>
+        </div>
+        <div class="preview">
+          <div class="preview-toolbar">
+            <span class="preview-label" id="pdf-label">CV / ENGLISH / PDF</span>
+            <a id="pdf-open" href="./cv.pdf" target="_blank" rel="noopener" type="application/pdf">Open full PDF ↗</a>
+          </div>
+          <iframe id="pdf-frame" class="resume-iframe" src="./cv.pdf#view=FitH"
+            title="English résumé (PDF)" loading="lazy">Your browser may not display embedded PDFs.</iframe>
+        </div>
+        <p class="resume-note">If the preview does not load on your device, use "Open full PDF" above.</p>
       </section>
 
       <section class="section" id="work" aria-labelledby="work-title">
@@ -220,5 +274,35 @@
       <span><a href="https://github.com/repparw">GitHub</a> · <a href="https://www.linkedin.com/in/ubritos/">LinkedIn</a></span>
     </footer>
   </div>
+  <script>
+    (() => {
+      const languages = {
+        en: { path: "./cv.pdf", label: "CV / ENGLISH / PDF", title: "English résumé (PDF)", link: "Open full PDF ↗" },
+        es: { path: "./cv_es.pdf", label: "CV / ESPAÑOL / PDF", title: "Currículum en español (PDF)", link: "Abrir PDF completo ↗" }
+      };
+      const frame = document.getElementById("pdf-frame");
+      const fullPDF = document.getElementById("pdf-open");
+      const label = document.getElementById("pdf-label");
+      const buttons = document.querySelectorAll("[data-lang]");
+      function setLanguage(lang, saveSelection) {
+        const selected = lang in languages ? lang : "en";
+        const choice = languages[selected];
+        frame.src = choice.path + "#view=FitH";
+        frame.title = choice.title;
+        fullPDF.href = choice.path;
+        fullPDF.textContent = choice.link;
+        fullPDF.lang = selected;
+        label.textContent = choice.label;
+        buttons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.lang === selected)));
+        if (saveSelection) {
+          const url = new URL(window.location.href);
+          url.searchParams.set("lang", selected);
+          history.replaceState(null, "", url);
+        }
+      }
+      buttons.forEach(button => button.addEventListener("click", () => setLanguage(button.dataset.lang, true)));
+      setLanguage(new URLSearchParams(window.location.search).get("lang") || "en", false);
+    })();
+  </script>
 </body>
 </html>
