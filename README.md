@@ -2,9 +2,9 @@
 
 **Linux systems · Infrastructure automation · Troubleshooting**
 
-I build and operate Linux-based infrastructure, automate repetitive work, and investigate failures across systems, networks, and services. My hands-on experience comes primarily from maintaining a personal NixOS fleet and contributing to open-source projects. I use version control, CI, monitoring, and operational documentation to make changes traceable and recoverable.
+**Currently looking for remote work.** I'm based in Argentina and actively seeking roles in technical support, Linux system administration, infrastructure, DevOps, and related technical fields. [Contact me on LinkedIn](https://www.linkedin.com/in/ubritos/).
 
-Based in Argentina. **Open to remote roles** in Linux infrastructure, system administration, DevOps, and technical support.
+I build and operate Linux-based infrastructure, automate repetitive work, and investigate failures across systems, networks, and services. My hands-on experience comes primarily from maintaining a personal NixOS fleet and contributing to open-source projects. I use version control, CI, monitoring, and operational documentation to make changes traceable and recoverable.
 
 **[Technical evidence for support and infrastructure roles](projects/technical-evidence.md)**: three short, source-backed cases covering a Linux service failure, monitoring and recovery, and a stateful API integration.
 
@@ -48,6 +48,3 @@ I contribute fixes, testing, and reviews to projects involving Linux packaging, 
 **Automation and development:** Python, Bash, Nix, Terraform/OpenTofu, GitHub Actions  
 **Operations:** Grafana, Prometheus-compatible metrics, Restic, SOPS, CI/CD, troubleshooting
 
-I'm interested in remote teams that need someone who can automate routine work, investigate problems, and document reliable fixes.
-
-[LinkedIn](https://www.linkedin.com/in/ubritos/) · [GitHub](https://github.com/repparw)
