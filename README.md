@@ -4,6 +4,8 @@
 
 **Currently looking for remote work.** Based in Argentina, I'm seeking technical support, implementation, IT operations, Linux infrastructure, DevOps/automation, and related technical roles. [Contact me on LinkedIn](https://www.linkedin.com/in/ubritos/).
 
+**[Download CV (English PDF)](https://raw.githubusercontent.com/repparw/repparw/main/cv.pdf)** · [CV en español (PDF)](https://raw.githubusercontent.com/repparw/repparw/main/cv_es.pdf)
+
 I build and operate Linux-based infrastructure, automate repetitive work, and investigate failures across systems, networks, and services. My hands-on experience comes primarily from maintaining a personal NixOS fleet and contributing fixes to open-source projects.
 
 **[Technical evidence for support and infrastructure roles](projects/technical-evidence.md)**: three short, source-backed cases covering a Linux service failure, monitoring and recovery, and a stateful API integration.
